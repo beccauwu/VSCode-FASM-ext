@@ -1,10 +1,6 @@
 import * as vscode from "vscode";
 import {fasm, instructions, registers} from "./hover.defs"
 
-export type Fasm = {
-	[key: string]: string;
-};
-
 function splitString(str: string, width: number, xpad: number, centre = true) {
 	const result = [];
 	const it = str.split(" ");
