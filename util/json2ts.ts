@@ -5,9 +5,6 @@ import { Convert as regConv } from "./registers";
 
 const fasm = fasmConv.toFASM(readFileSync("./fasm.json").toString());
 const inst = insConv.toInstructions(readFileSync("./instructions.json").toString());
-/**
- * 
- */
 const reg = regConv.toRegisters(readFileSync("./registers.json").toString());
 const ostream = createWriteStream("../src/hover.defs.ts");
 const defs = `
@@ -42,7 +39,7 @@ ostream.write(`
 /**
  * keywords in fasm
  */
-export const fasm = {
+export const fasm: Fasm = {
 `);
 
 for (const d of fasm.directives.directive) {
