@@ -101,6 +101,7 @@ for (const i of inst.InstructionSet.Instruction) {
 	}
 	//TODO: maybe use the other props too?
 	for (const v of nameset) {
+    if(v === "movq" && i.name.toLowerCase() === "mov") continue;
 		ostream.write(
 			`  "${v}": {name: "${i.name.toLowerCase()}",description:\`${i.summary}\`},\n`,
 		);
