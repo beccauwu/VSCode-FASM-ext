@@ -1,11 +1,13 @@
 import * as vscode from 'vscode';
 import completionProvider from "./completion"
+import hoverProvider from './hover';
 import commands from "./commands"
 import config from "./config"
 
 export function activate(context: vscode.ExtensionContext) {
     // register buttons & provider
-    const provider = completionProvider()
+    const completions = completionProvider()
+    const hover = hoverProvider();
     
     // register commands
     const createConfigCommand = vscode.commands.registerCommand('fasm.createConfigs', async () => await commands.createConfigCommand());
@@ -18,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
         config.checkAndCreateConfigs();
     }
 
-    context.subscriptions.push(provider, createConfigCommand, showDropdownCommand, debugCommand, runCommand, buildCommand);
+    context.subscriptions.push(completions, hover, createConfigCommand, showDropdownCommand, debugCommand, runCommand, buildCommand);
 }
 
 export function deactivate() {}
