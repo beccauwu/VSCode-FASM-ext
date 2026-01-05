@@ -161,7 +161,8 @@
     "schema:fasm": "quicktype ./util/fasm.json -o ./util/fasm.ts",
     "schema:ins": "quicktype ./util/instructions.json -o ./util/instructions.ts",
     "schema": "npm run schema:regs && npm run schema:fasm && npm run schema:ins",
-    "gen": "cd util && tsc --downlevelIteration json2ts.ts && node json2ts.js && rm *.js"
+    "gen:def": "cd util && tsc --downlevelIteration json2ts.ts && node json2ts.js && rm *.js",
+    "gen": "npm run schema && npm run gen:def"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
