@@ -27,7 +27,7 @@ export type Instructions = {
 /**
  * keywords in fasm
  */
-export const fasm = {
+export const fasm: Fasm = {
   "include": `The include directive includes the specified source file at the position where it is used. It should be followed by the quoted name of file that should be included.`,
   "equ": `The definition of symbolic constant consists of name of the constant followed by the equ directive. Everything that follows this directive will become the value of constant. If the value of symbolic constant contains other symbolic constants, they are replaced with their values before assigning this value to the new constant.`,
   "restore": `The restore directive allows to get back previous value of redefined symbolic constant. It should be followed by one more names of symbolic constants, separated with commas.`,
