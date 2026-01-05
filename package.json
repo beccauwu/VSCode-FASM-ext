@@ -121,7 +121,10 @@
           "fasm"
         ],
         "extensions": [
-          ".asm", ".ASM", ".inc", ".INC"
+          ".asm",
+          ".ASM",
+          ".inc",
+          ".INC"
         ],
         "configuration": "./language-configuration.json",
         "filenames": [],
@@ -153,7 +156,12 @@
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "lint": "eslint src",
     "test": "vscode-test",
-    "deploy": "vsce publish --yarn"
+    "deploy": "vsce publish --yarn",
+    "schema:regs": "quicktype ./util/registers.json -o ./util/registers.ts",
+    "schema:fasm": "quicktype ./util/fasm.json -o ./util/fasm.ts",
+    "schema:ins": "quicktype ./util/instructions.json -o ./util/instructions.ts",
+    "schema": "npm run schema:regs && npm run schema:fasm && npm run schema:ins",
+    "gen": "cd util && tsc --downlevelIteration json2ts.ts && node json2ts.js && rm *.js"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
@@ -166,6 +174,7 @@
     "@vscode/test-electron": "^2.4.1",
     "@vscode/vsce": "^3.2.1",
     "eslint": "^9.16.0",
+    "quicktype": "^23.2.6",
     "ts-loader": "^9.5.1",
     "typescript": "^5.7.2",
     "webpack": "^5.95.0",
