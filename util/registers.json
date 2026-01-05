@@ -1,0 +1,4336 @@
+{
+	"InstructionSet": {
+		"name": "x86-64",
+		"Register": [
+			{
+				"name": "rax",
+				"description": "Accumulator",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "eax",
+				"description": "Accumulator",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ax",
+				"description": "Accumulator",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ah",
+				"description": "Accumulator. Cannot be accessed when using the REX.W instruction prefix. The prefixed is added (automatically by assemblers) when an operand contains a 64-bit register",
+				"type": "General Purpose Register",
+				"width": "8 high bits of lower 16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "al",
+				"description": "Accumulator",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "rbx",
+				"description": "Base",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ebx",
+				"description": "Base",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "bx",
+				"description": "Base",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "bh",
+				"description": "Base. Cannot be accessed when using the REX.W instruction prefix. The prefixed is added (automatically by assemblers) when an operand contains a 64-bit register",
+				"type": "General Purpose Register",
+				"width": "8 high bits of lower 16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "bl",
+				"description": "Base",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "rcx",
+				"description": "Counter",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ecx",
+				"description": "Counter",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "cx",
+				"description": "Counter",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ch",
+				"description": "Counter. Cannot be accessed when using the REX.W instruction prefix. The prefixed is added (automatically by assemblers) when an operand contains a 64-bit register",
+				"type": "General Purpose Register",
+				"width": "8 high bits of lower 16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "cl",
+				"description": "Counter",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "rdx",
+				"description": "Data (commonly extends the A register)",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "edx",
+				"description": "Data (commonly extends the A register)",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "dx",
+				"description": "Data (commonly extends the A register)",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "dh",
+				"description": "Data (commonly extends the A register). Cannot be accessed when using the REX.W instruction prefix. The prefixed is added (automatically by assemblers) when an operand contains a 64-bit register",
+				"type": "General Purpose Register",
+				"width": "8 high bits of lower 16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "dl",
+				"description": "Data (commonly extends the A register)",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "rsi",
+				"description": "Source index for string operations",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "esi",
+				"description": "Source index for string operations",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "si",
+				"description": "Source index for string operations",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "sil",
+				"description": "Source index for string operations",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "rdi",
+				"description": "Destination index for string operations",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "edi",
+				"description": "Destination index for string operations",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "di",
+				"description": "Destination index for string operations",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "dil",
+				"description": "Destination index for string operations",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "rsp",
+				"description": "Stack Pointer",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "esp",
+				"description": "Stack Pointer",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "sp",
+				"description": "Stack Pointer",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "spl",
+				"description": "Stack Pointer",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "rbp",
+				"description": "Base Pointer (meant for stack frames)",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ebp",
+				"description": "Base Pointer (meant for stack frames)",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "bp",
+				"description": "Base Pointer (meant for stack frames)",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "bpl",
+				"description": "Base Pointer (meant for stack frames)",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r8",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r8d",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r8w",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r8b",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r9",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r9d",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r9w",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r9b",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r10",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r10d",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r10w",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r10b",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r11",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r11d",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r11w",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r11b",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r12",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r12d",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r12w",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r12b",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r13",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r13d",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r13w",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r13b",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r14",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r14d",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r14w",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r14b",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r15",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r15d",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r15w",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "r15b",
+				"description": "General Purpose",
+				"type": "General Purpose Register",
+				"width": "8 lower bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "rip",
+				"description": "Instruction Pointer. Can only be used in RIP-relative addressing.",
+				"type": "Pointer Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "eip",
+				"description": "Instruction Pointer. Can only be used in RIP-relative addressing.",
+				"type": "Pointer Register",
+				"width": "32 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ip",
+				"description": "Instruction Pointer. Can only be used in RIP-relative addressing.",
+				"type": "Pointer Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "cs",
+				"description": "Code Segment. Treated as if its base is 0 no matter what the segment descriptors in the GDT say.",
+				"type": "Segment Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ds",
+				"description": "Data Segment. Treated as if its base is 0 no matter what the segment descriptors in the GDT say.",
+				"type": "Segment Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ss",
+				"description": "Stack Segment. Treated as if its base is 0 no matter what the segment descriptors in the GDT say.",
+				"type": "Segment Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "es",
+				"description": "Extra Segment (used for string operations). Treated as if its base is 0 no matter what the segment descriptors in the GDT say.",
+				"type": "Segment Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "fs",
+				"description": "General Purpose F Segment. MSRs can change its base.",
+				"type": "Segment Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "gs",
+				"description": "General Purpose G Segment. MSRs can change its base.",
+				"type": "Segment Register",
+				"width": "16 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "rflags",
+				"description": "Reserved Flags Register",
+				"type": "Flag Register",
+				"width": "64 bits",
+				"flags": [
+					{
+						"bit": "0",
+						"label": "CF",
+						"description": "Carry flag"
+					},
+					{
+						"bit": "1",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "2",
+						"label": "PF",
+						"description": "Parity flag"
+					},
+					{
+						"bit": "3",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "4",
+						"label": "AF",
+						"description": "Auxiliary Carry flag"
+					},
+					{
+						"bit": "5",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "6",
+						"label": "ZF",
+						"description": "Zero flag"
+					},
+					{
+						"bit": "7",
+						"label": "SF",
+						"description": "Sign flag"
+					},
+					{
+						"bit": "8",
+						"label": "TF",
+						"description": "Trap flag"
+					},
+					{
+						"bit": "9",
+						"label": "IF",
+						"description": "Interrupt enable flag"
+					},
+					{
+						"bit": "10",
+						"label": "DF",
+						"description": "Direction flag"
+					},
+					{
+						"bit": "11",
+						"label": "OF",
+						"description": "Overflow flag"
+					},
+					{
+						"bit": "12",
+						"label": "IOPL",
+						"description": "I/O privilege level"
+					},
+					{
+						"bit": "13",
+						"label": "IOPL",
+						"description": "I/O privilege level"
+					},
+					{
+						"bit": "14",
+						"label": "NT",
+						"description": "Nested task flag"
+					},
+					{
+						"bit": "15",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "16",
+						"label": "RF",
+						"description": "Resume flag"
+					},
+					{
+						"bit": "17",
+						"label": "VM",
+						"description": "Virtual 8086 mode flag"
+					},
+					{
+						"bit": "18",
+						"label": "AC",
+						"description": "Alignment check"
+					},
+					{
+						"bit": "19",
+						"label": "VIF",
+						"description": "Virtual interrupt flag"
+					},
+					{
+						"bit": "20",
+						"label": "VIP",
+						"description": "Virtual interrupt pending"
+					},
+					{
+						"bit": "21",
+						"label": "ID",
+						"description": "Able to use CPUID instruction"
+					},
+					{
+						"bit": "22",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "23",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "24",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "25",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "26",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "27",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "28",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "29",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "30",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "31",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "32",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "33",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "34",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "35",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "36",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "37",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "38",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "39",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "40",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "41",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "42",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "43",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "44",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "45",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "46",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "47",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "48",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "49",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "50",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "51",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "52",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "53",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "54",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "55",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "56",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "57",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "58",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "59",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "60",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "61",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "62",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "63",
+						"label": "",
+						"description": "Reserved"
+					}
+				]
+			},
+			{
+				"name": "cr0",
+				"description": "Control Register 0. This is the only control register that can be written and read via 2 ways unlike the others that can be accessed only via the MOV instruction.",
+				"type": "Control Register",
+				"width": "64 bits",
+				"flags": [
+					{
+						"bit": "0",
+						"label": "PE",
+						"description": "Protected Mode Enable"
+					},
+					{
+						"bit": "1",
+						"label": "MP",
+						"description": "Monitor co-processor"
+					},
+					{
+						"bit": "2",
+						"label": "EM",
+						"description": "x87 FPU Emulation"
+					},
+					{
+						"bit": "3",
+						"label": "TS",
+						"description": "Task switched"
+					},
+					{
+						"bit": "4",
+						"label": "ET",
+						"description": "Extension type"
+					},
+					{
+						"bit": "5",
+						"label": "NE",
+						"description": "Numeric error"
+					},
+					{
+						"bit": "6",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "7",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "8",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "9",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "10",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "11",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "12",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "13",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "14",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "15",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "16",
+						"label": "WP",
+						"description": "Write protect"
+					},
+					{
+						"bit": "17",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "18",
+						"label": "AM",
+						"description": "Alignment mask"
+					},
+					{
+						"bit": "19",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "20",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "21",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "22",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "23",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "24",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "25",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "26",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "27",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "28",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "29",
+						"label": "NW",
+						"description": "Not-write through"
+					},
+					{
+						"bit": "30",
+						"label": "CD",
+						"description": "Cache disable"
+					},
+					{
+						"bit": "31",
+						"label": "PG",
+						"description": "Paging"
+					},
+					{
+						"bit": "32",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "33",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "34",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "35",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "36",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "37",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "38",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "39",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "40",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "41",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "42",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "43",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "44",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "45",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "46",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "47",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "48",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "49",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "50",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "51",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "52",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "53",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "54",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "55",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "56",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "57",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "58",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "59",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "60",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "61",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "62",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "63",
+						"label": "",
+						"description": "Reserved"
+					}
+				]
+			},
+			{
+				"#item": {
+					"register": {
+						"name": "cr1",
+						"description": "Control register 1. Reserved, CPU will throw a #ud exception when trying to access.",
+						"type": "Control Register",
+						"#text": "\n    "
+					}
+				}
+			},
+			{
+				"name": "cr2",
+				"description": "Control Register 2. This control register contains the linear (virtual) address whcih triggered a page fault, available in the page fault's interrupt hander.",
+				"type": "Control Register",
+				"width": "64 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "cr3",
+				"description": "Control Register 3. This must be page aligned.",
+				"type": "Control Register",
+				"width": "64 bits",
+				"flags": [
+					{
+						"bit": "0",
+						"label": "",
+						"description": "Reserved if CR4.PCIDE = 0. PCID if CR4.PCIDE = 1"
+					},
+					{
+						"bit": "1",
+						"label": "",
+						"description": "Reserved if CR4.PCIDE = 0. PCID if CR4.PCIDE = 1"
+					},
+					{
+						"bit": "2",
+						"label": "",
+						"description": "Reserved if CR4.PCIDE = 0. PCID if CR4.PCIDE = 1"
+					},
+					{
+						"bit": "3",
+						"label": "PWT if CR4.PCIDE = 0",
+						"description": "Page-Level Write Through if CR4.PCIDE = 0. PCID if CR4.PCIDE = 1"
+					},
+					{
+						"bit": "4",
+						"label": "",
+						"description": "Reserved if CR4.PCIDE = 0. PCID if CR4.PCIDE = 1"
+					},
+					{
+						"bit": "5",
+						"label": "PCD if CR4.PCIDE = 0",
+						"description": "Page-Level Cache Disable if CR4.PCIDE = 0. PCID if CR4.PCIDE = 1"
+					},
+					{
+						"bit": "6",
+						"label": "",
+						"description": "Reserved if CR4.PCIDE = 0. PCID if CR4.PCIDE = 1"
+					},
+					{
+						"bit": "7",
+						"label": "",
+						"description": "Reserved if CR4.PCIDE = 0. PCID if CR4.PCIDE = 1"
+					},
+					{
+						"bit": "8",
+						"label": "",
+						"description": "Reserved if CR4.PCIDE = 0. PCID if CR4.PCIDE = 1"
+					},
+					{
+						"bit": "9",
+						"label": "",
+						"description": "Reserved if CR4.PCIDE = 0. PCID if CR4.PCIDE = 1"
+					},
+					{
+						"bit": "10",
+						"label": "",
+						"description": "Reserved if CR4.PCIDE = 0. PCID if CR4.PCIDE = 1"
+					},
+					{
+						"bit": "11",
+						"label": "",
+						"description": "Reserved if CR4.PCIDE = 0. PCID if CR4.PCIDE = 1"
+					},
+					{
+						"bit": "12",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "13",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "14",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "15",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "16",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "17",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "18",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "19",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "20",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "21",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "22",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "23",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "24",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "25",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "26",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "27",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "28",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "29",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "30",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "31",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "32",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "33",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "34",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "35",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "36",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "37",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "38",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "39",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "40",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "41",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "42",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "43",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "44",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "45",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "46",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "47",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "48",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "49",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "50",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "51",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "52",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "53",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "54",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "55",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "56",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "57",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "58",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "59",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "60",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "61",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "62",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					},
+					{
+						"bit": "63",
+						"label": "",
+						"description": "Physical Base Address of the PML4"
+					}
+				]
+			},
+			{
+				"name": "cr4",
+				"description": "Control Register 4",
+				"type": "Control Register",
+				"width": "64 bits",
+				"flags": [
+					{
+						"bit": "0",
+						"label": "VME",
+						"description": "Virtual 8086 Mode Extensions"
+					},
+					{
+						"bit": "1",
+						"label": "PVI",
+						"description": "Protected-mode Virtual Interrupts"
+					},
+					{
+						"bit": "2",
+						"label": "TSD",
+						"description": "Time Stamp Disable"
+					},
+					{
+						"bit": "3",
+						"label": "DE",
+						"description": "Debugging Extensions"
+					},
+					{
+						"bit": "4",
+						"label": "PSE",
+						"description": "Page Size Extension"
+					},
+					{
+						"bit": "5",
+						"label": "PAE",
+						"description": "Physical Address Extension"
+					},
+					{
+						"bit": "6",
+						"label": "MCE",
+						"description": "Machine Check Exception"
+					},
+					{
+						"bit": "7",
+						"label": "PGE",
+						"description": "Page Global Enabled"
+					},
+					{
+						"bit": "8",
+						"label": "PCE",
+						"description": "Performance-Monitoring Counter enable"
+					},
+					{
+						"bit": "9",
+						"label": "OSFXSR",
+						"description": "Operating system support for FXSAVE and FXRSTOR operations"
+					},
+					{
+						"bit": "10",
+						"label": "OSXMMEXCPT",
+						"description": "Operating System Support for Unmasked SIMD Floating-Point Exceptions"
+					},
+					{
+						"bit": "11",
+						"label": "UMIP",
+						"description": "User-Mode Instruction Prevention (if set, #GP on SGDT, SIDT, SLDT, SMSW, and STR instructions when CPL>0)"
+					},
+					{
+						"bit": "12",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "13",
+						"label": "VMXE",
+						"description": "Virtual Machine Extensions Enable"
+					},
+					{
+						"bit": "14",
+						"label": "SMXE",
+						"description": "Safer Mode Extensions Enable"
+					},
+					{
+						"bit": "15",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "16",
+						"label": "FSGSBASE",
+						"description": "Enables the instructions RDFSBASE, RDGSBASE, WRFSBASE, and WRGSBASE"
+					},
+					{
+						"bit": "17",
+						"label": "PCIDE",
+						"description": "PCID Enable"
+					},
+					{
+						"bit": "18",
+						"label": "OSXSAVE",
+						"description": "XSAVE and Processor Extended States Enable"
+					},
+					{
+						"bit": "19",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "20",
+						"label": "SMEP",
+						"description": "Supervisor Mode Execution Protection Enable"
+					},
+					{
+						"bit": "21",
+						"label": "SMAP",
+						"description": "Supervisor Modde Access Prevention Enable"
+					},
+					{
+						"bit": "22",
+						"label": "PKE",
+						"description": "Protection Key Enable"
+					},
+					{
+						"bit": "23",
+						"label": "CET",
+						"description": "Control-flow Enforcement Technology"
+					},
+					{
+						"bit": "24",
+						"label": "PKS",
+						"description": "Enable Protection Keys for Supervisor-Mode Pages"
+					},
+					{
+						"bit": "25",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "26",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "27",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "28",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "29",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "30",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "31",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "32",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "33",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "34",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "35",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "36",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "37",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "38",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "39",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "40",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "41",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "42",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "43",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "44",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "45",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "46",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "47",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "48",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "49",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "50",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "51",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "52",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "53",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "54",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "55",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "56",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "57",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "58",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "59",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "60",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "61",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "62",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "63",
+						"label": "",
+						"description": "Reserved"
+					}
+				]
+			},
+			{
+				"name": "cr5",
+				"description": "Control Register 5. Reserved, CPU will throw a #ud exception when trying to access.",
+				"type": "Control Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "cr6",
+				"description": "Control Register 6. Reserved, CPU will throw a #ud exception when trying to access.",
+				"type": "Control Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "cr7",
+				"description": "Control Register 7. Reserved, CPU will throw a #ud exception when trying to access.",
+				"type": "Control Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "cr8",
+				"description": "Control Register 8. CR8 is used to prioritize external interrupts and is referred to as the task-priority register (TPR).\n\nThe AMD64 architecture allows software to define up to 15 external interrupt-priority classes. Priority classes are numbered from 1 to 15, with priority-class 1 being the lowest and priority-class 15 the highest. CR8 uses the four low-order bits for specifying a task priority and the remaining 60 bits are reserved and must be written with zeros.\n\nSystem software can use the TPR register to temporarily block low-priority interrupts from interrupting a high-priority task. This is accomplished by loading TPR with a value corresponding to the highest-priority interrupt that is to be blocked. For example, loading TPR with a value of 9 (1001b) blocks all interrupts with a priority class of 9 or less, while allowing all interrupts with a priority class of 10 or more to be recognized. Loading TPR with 0 enables all external interrupts. Loading TPR with 15 (1111b) disables all external interrupts.\n\nThe TPR is cleared to 0 on reset.",
+				"type": "Control Register",
+				"width": "64 bits",
+				"flags": [
+					{
+						"bit": "0",
+						"label": "",
+						"description": "Priority"
+					},
+					{
+						"bit": "1",
+						"label": "",
+						"description": "Priority"
+					},
+					{
+						"bit": "2",
+						"label": "",
+						"description": "Priority"
+					},
+					{
+						"bit": "3",
+						"label": "",
+						"description": "Priority"
+					},
+					{
+						"bit": "4",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "5",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "6",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "7",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "8",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "9",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "10",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "11",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "12",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "13",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "14",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "15",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "16",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "17",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "18",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "19",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "20",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "21",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "22",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "23",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "24",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "25",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "26",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "27",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "28",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "29",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "30",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "31",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "32",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "33",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "34",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "35",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "36",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "37",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "38",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "39",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "40",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "41",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "42",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "43",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "44",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "45",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "46",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "47",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "48",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "49",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "50",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "51",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "52",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "53",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "54",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "55",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "56",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "57",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "58",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "59",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "60",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "61",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "62",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "63",
+						"label": "",
+						"description": "Reserved"
+					}
+				]
+			},
+			{
+				"name": "cr9",
+				"description": "Control Register 9. Reserved, CPU will throw a #ud exception when trying to access.",
+				"type": "Control Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "cr10",
+				"description": "Control Register 10. Reserved, CPU will throw a #ud exception when trying to access.",
+				"type": "Control Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "cr11",
+				"description": "Control Register 11. Reserved, CPU will throw a #ud exception when trying to access.",
+				"type": "Control Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "cr12",
+				"description": "Control Register 12. Reserved, CPU will throw a #ud exception when trying to access.",
+				"type": "Control Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "cr13",
+				"description": "Control Register 13. Reserved, CPU will throw a #ud exception when trying to access.",
+				"type": "Control Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "cr14",
+				"description": "Control Register 14. Reserved, CPU will throw a #ud exception when trying to access.",
+				"type": "Control Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "cr15",
+				"description": "Control Register 15. Reserved, CPU will throw a #ud exception when trying to access.",
+				"type": "Control Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "ia32_efer",
+				"description": "The Extended Feature Enable Register (EFER) is a model-specific register added in the AMD K6 processor, to allow enabling the SYSCALL/SYSRET instruction, and later for entering and exiting long mode. This register becomes architectural in AMD64 and has been adopted by Intel. Its MSR number is 0xC0000080.",
+				"type": "Machine State Register",
+				"width": "64 bits",
+				"flags": [
+					{
+						"bit": "0",
+						"label": "SCE",
+						"description": "System Call Extensions"
+					},
+					{
+						"bit": "1",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "2",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "3",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "4",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "5",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "6",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "7",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "8",
+						"label": "LME",
+						"description": "Long Mode Enable"
+					},
+					{
+						"bit": "9",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "10",
+						"label": "LMA",
+						"description": "Long Mode Active"
+					},
+					{
+						"bit": "11",
+						"label": "NXE",
+						"description": "No-Execute Enable"
+					},
+					{
+						"bit": "12",
+						"label": "SVME",
+						"description": "Secure Virtual Machine Enable"
+					},
+					{
+						"bit": "13",
+						"label": "LMSLE",
+						"description": "Long Mode Segment Limit Enable"
+					},
+					{
+						"bit": "14",
+						"label": "FFXSR",
+						"description": "Fast FXSAVE/FXSTOR"
+					},
+					{
+						"bit": "15",
+						"label": "TCE",
+						"description": "Translate Cache Extension"
+					},
+					{
+						"bit": "16",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "17",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "18",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "19",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "20",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "21",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "22",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "23",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "24",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "25",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "26",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "27",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "28",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "29",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "30",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "31",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "32",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "33",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "34",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "35",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "36",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "37",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "38",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "39",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "40",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "41",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "42",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "43",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "44",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "45",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "46",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "47",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "48",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "49",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "50",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "51",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "52",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "53",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "54",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "55",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "56",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "57",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "58",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "59",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "60",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "61",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "62",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "63",
+						"label": "",
+						"description": "Reserved"
+					}
+				]
+			},
+			{
+				"name": "fs.base",
+				"description": "MSR with the address 0xC0000100, contains the base address of the FS segment register. This is commonly used for thread-pointers in user code and CPU-local pointers in kernel code. Safe to contain anything, since use of a segment does not confer additional privileges to user code.\n\nIn newer CPUs, this can also be written with the WRFSBASE instruction at any privilege level.",
+				"type": "Machine State Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "gs.base",
+				"description": "MSR with the address 0xC0000101, contains the base address of the GS segment register. This is commonly used for thread-pointers in user code and CPU-local pointers in kernel code. Safe to contain anything, since use of a segment does not confer additional privileges to user code.\n\nIn newer CPUs, this can also be written with the WRGSBASE instruction at any privilege level.",
+				"type": "Machine State Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "kernelgsbase",
+				"description": "MSR with the address 0xC0000102. Is basically a buffer that gets exchanged with GS.base after a swapgs instruction. Usually used to separate kernel and other use of the GS register.",
+				"type": "Machine State Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "dr0",
+				"description": "Can contain linear address of a breakpoint. If paging is enabled, it is translated to a physical address",
+				"type": "Debug Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "dr1",
+				"description": "Can contain linear address of a breakpoint. If paging is enabled, it is translated to a physical address",
+				"type": "Debug Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "dr2",
+				"description": "Can contain linear address of a breakpoint. If paging is enabled, it is translated to a physical address",
+				"type": "Debug Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "dr3",
+				"description": "Can contain linear address of a breakpoint. If paging is enabled, it is translated to a physical address",
+				"type": "Debug Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "dr6",
+				"description": "Permits the debugger to determine which debug conditions have occurred. When an enabled debug exception is triggered, low order bits 0-3 are set before entering debug exception handler.",
+				"#text": "\n    "
+			},
+			{
+				"name": "dr7",
+				"description": "A local breakpoint bit deactivates on hardware task switches, while a global does not. Condition 00b means execution break, 01b means a write watchpoint, and 11b means a R/W watchpoint. 10b is reserved for I/O R/W (unsupported)",
+				"type": "Debug Register",
+				"width": "32 bits",
+				"flags": [
+					{
+						"bit": "0",
+						"label": "",
+						"description": "Local DR0 breakpoint"
+					},
+					{
+						"bit": "1",
+						"label": "",
+						"description": "Global DR0 breakpoint"
+					},
+					{
+						"bit": "2",
+						"label": "",
+						"description": "Local DR1 breakpoint"
+					},
+					{
+						"bit": "3",
+						"label": "",
+						"description": "Global DR1 breakpoint"
+					},
+					{
+						"bit": "4",
+						"label": "",
+						"description": "Local DR2 breakpoint"
+					},
+					{
+						"bit": "5",
+						"label": "",
+						"description": "Global DR2 breakpoint"
+					},
+					{
+						"bit": "6",
+						"label": "",
+						"description": "Local DR3 breakpoint"
+					},
+					{
+						"bit": "7",
+						"label": "",
+						"description": "Global DR3 breakpoint"
+					},
+					{
+						"bit": "8",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "9",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "10",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "11",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "12",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "13",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "14",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "15",
+						"label": "",
+						"description": "Reserved"
+					},
+					{
+						"bit": "16",
+						"label": "",
+						"description": "Condition for DR0"
+					},
+					{
+						"bit": "17",
+						"label": "",
+						"description": "Condition for DR0"
+					},
+					{
+						"bit": "18",
+						"label": "",
+						"description": "Size of DR0 breakpoint"
+					},
+					{
+						"bit": "19",
+						"label": "",
+						"description": "Size of DR0 breakpoint"
+					},
+					{
+						"bit": "20",
+						"label": "",
+						"description": "Condition for DR1"
+					},
+					{
+						"bit": "21",
+						"label": "",
+						"description": "Condition for DR1"
+					},
+					{
+						"bit": "22",
+						"label": "",
+						"description": "Size of DR1 breakpoint"
+					},
+					{
+						"bit": "23",
+						"label": "",
+						"description": "Size of DR1 breakpoint"
+					},
+					{
+						"bit": "24",
+						"label": "",
+						"description": "Condition for DR2"
+					},
+					{
+						"bit": "25",
+						"label": "",
+						"description": "Condition for DR2"
+					},
+					{
+						"bit": "26",
+						"label": "",
+						"description": "Size of DR2 breakpoint"
+					},
+					{
+						"bit": "27",
+						"label": "",
+						"description": "Size of DR2 breakpoint"
+					},
+					{
+						"bit": "28",
+						"label": "",
+						"description": "Condition for DR3"
+					},
+					{
+						"bit": "29",
+						"label": "",
+						"description": "Condition for DR3"
+					},
+					{
+						"bit": "30",
+						"label": "",
+						"description": "Size of DR3 breakpoint"
+					},
+					{
+						"bit": "31",
+						"label": "",
+						"description": "Size of DR3 breakpoint"
+					}
+				]
+			},
+			{
+				"name": "tr3",
+				"description": "Undocumented",
+				"type": "Test Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "tr4",
+				"description": "Undocumented",
+				"type": "Test Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "tr5",
+				"description": "Undocumented",
+				"type": "Test Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "tr6",
+				"description": "Test command register",
+				"type": "Test Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "tr7",
+				"description": "Test data register",
+				"type": "Test Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "gdtr",
+				"description": "",
+				"type": "Protected Mode Register",
+				"width": "80 bits",
+				"flags": [
+					{
+						"bit": "0",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "1",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "2",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "3",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "4",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "5",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "6",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "7",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "8",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "9",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "10",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "11",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "12",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "13",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "14",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "15",
+						"label": "Limit",
+						"description": "Size of GDT"
+					},
+					{
+						"bit": "16",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "17",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "18",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "19",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "20",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "21",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "22",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "23",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "24",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "25",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "26",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "27",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "28",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "79",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "30",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "31",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "32",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "33",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "34",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "35",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "36",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "37",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "38",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "39",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "40",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "41",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "42",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "43",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "44",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "45",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "46",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "47",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "48",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "49",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "50",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "51",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "52",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "53",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "54",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "55",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "56",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "57",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "58",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "59",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "60",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "61",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "62",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "63",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "64",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "65",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "66",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "67",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "68",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "69",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "70",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "71",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "72",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "73",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "74",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "75",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "76",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "77",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "78",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "79",
+						"label": "Base",
+						"description": "Starting address of GDR (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					}
+				]
+			},
+			{
+				"name": "ldtr",
+				"description": "Stores the segment selector of the LDT",
+				"type": "Protected Mode Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "tr",
+				"description": "Stores the segment selector of the TSS",
+				"type": "Protected Mode Register",
+				"#text": "\n    "
+			},
+			{
+				"name": "idtr",
+				"description": "",
+				"type": "Protected Mode Register",
+				"width": "80 bits",
+				"flags": [
+					{
+						"bit": "0",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "1",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "2",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "3",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "4",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "5",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "6",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "7",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "8",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "9",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "10",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "11",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "12",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "13",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "14",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "15",
+						"label": "Limit",
+						"description": "Size of IDT"
+					},
+					{
+						"bit": "16",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "17",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "18",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "19",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "20",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "21",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "22",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "23",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "24",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "25",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "26",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "27",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "28",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "79",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "30",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "31",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "32",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "33",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "34",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "35",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "36",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "37",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "38",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "39",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "40",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "41",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "42",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "43",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "44",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "45",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "46",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "47",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "48",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "49",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "50",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "51",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "52",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "53",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "54",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "55",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "56",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "57",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "58",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "59",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "60",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "61",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "62",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "63",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "64",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "65",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "66",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "67",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "68",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "69",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "70",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "71",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "72",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "73",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "74",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "75",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "76",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "77",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "78",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					},
+					{
+						"bit": "79",
+						"label": "Base",
+						"description": "Starting address of IDT (Bits 16-47 if 32 bit operand, bits 16-79 if 64 bit operand)"
+					}
+				]
+			},
+			{
+				"name": "xmm0",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm1",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm2",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm3",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm4",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm5",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm6",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm7",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm8",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm9",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm10",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm11",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm12",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm13",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm14",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm15",
+				"description": "A SIMD register. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm16",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm17",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm18",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm19",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm20",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm21",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm22",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm23",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm24",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm25",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm26",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm27",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm28",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm29",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm30",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "xmm31",
+				"description": "A SIMD register available when AVX-512 is supported. Under SSE, this register can be used to store four 32-bit single-precision floating point numbers. SSE2 would later expand its usage to also allow two 64-bit double-precision floating point numbers, two 64-bit integers, four 32-bit integers, eight 16-bit short integers, or sixteen 8-bit bytes or characters.",
+				"type": "SIMD Register",
+				"width": "128 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm0",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm1",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm2",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm3",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm4",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm5",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm6",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm7",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm8",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm9",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm10",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm11",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm12",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm13",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm14",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm15",
+				"description": "A SIMD register. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm16",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm17",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm18",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm19",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm20",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm21",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm22",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm23",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm24",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm25",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm26",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm27",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm28",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm29",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm30",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "ymm31",
+				"description": "A SIMD register available when AVX-512 is supported. This register can be used to store four 64-bit double-precision floating point numbers, or eight 32-bit single precision floating point numbers. The lower half maps onto the corresponding XMM register.",
+				"type": "SIMD Register",
+				"width": "256 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm0",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm1",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm2",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm3",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm4",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm5",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm6",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm7",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm8",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm9",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm10",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm11",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm12",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm13",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm14",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm15",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm16",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm17",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm18",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm19",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm20",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm21",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm22",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm23",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm24",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm25",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm26",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm27",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm28",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm29",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm30",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			},
+			{
+				"name": "zmm31",
+				"description": "A SIMD register. The lower half maps onto the corresponding YMM register.",
+				"type": "SIMD Register",
+				"width": "512 bits",
+				"#text": "\n    "
+			}
+		]
+	}
+}
