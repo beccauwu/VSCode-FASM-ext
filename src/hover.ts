@@ -1,35 +1,36 @@
 import * as vscode from "vscode";
-import {fasm, instructions, registers} from "./hover.defs"
+import { fasm, instructions, registers } from "./hover.defs";
 
-function splitString(str: string, width: number, xpad: number, centre = true) {
-	const result = [];
-	const it = str.split(" ");
+function ensureWidth(str: string, width: number) {
+	const result: string[] = [];
+	const it = str.split("\n").map((v, _) => v.split(" "));
 	let tmp = "";
-	const pad = (s: string) => {
-		return s;
-		// const len = s.length;
-		// let toPad = width + xpad - len;
-		// if (!centre) return `${s}${"&nbsp;".repeat(toPad)}`;
-		// if (toPad % 2 !== 0) toPad++;
-		// const padding = "&nbsp;".repeat(toPad / 2);
-		// return `${padding}${s}${padding}`;
-	};
-	for (const s of it) {
-		if (s.length >= width) {
-			if (tmp.length) {
-				result.push(pad(tmp));
+	for (let i = 0; i < it.length; ++i) {
+		for (let j = 0; j < it[i].length; ++j) {
+			const s = it[i][j];
+			if (s.length >= width) {
+				// if a word is by itself too wide
+        // just put it on its own line
+				if (tmp.length) {
+					result.push(tmp);
+					tmp = "";
+				}
+				result.push(s);
+				continue;
+			}
+			if (tmp.length + s.length >= width) {
+				result.push(tmp);
 				tmp = "";
 			}
-			result.push(pad(s));
-			continue;
+			tmp += `${s} `;
 		}
-		if (tmp.length + s.length >= width) {
-			result.push(pad(tmp));
-			tmp = "";
-		}
-		tmp += `${s} `;
+    // we can't just replace newlines with <br>
+    // because '<br>' messes with length
+    // making it look scuffed
+		result.push(`${tmp || ""} <br>`);
+		tmp = "";
 	}
-	if (tmp.length) result.push(pad(tmp));
+
 	if (result.length === 1) return result[0];
 	return result.join(" <br> ");
 }
@@ -55,7 +56,7 @@ export default function hoverProvider() {
 (keyword) ${text}
 \`\`\`
 
-${splitString(fasm[text as keyof typeof fasm], 60, 0, false)}`,
+${ensureWidth(fasm[text as keyof typeof fasm], 60)}`,
 				);
 			} else if (text in registers) {
 				const val = registers[text as keyof typeof registers];
@@ -63,7 +64,7 @@ ${splitString(fasm[text as keyof typeof fasm], 60, 0, false)}`,
 					`\`\`\`fasm
 (register) ${text}
 \`\`\`
-${splitString(val.description, 60, 0, false)}
+${ensureWidth(val.description, 60)}
 `,
 				);
 				if (val.flags.length) {
@@ -89,7 +90,7 @@ ${splitString(val.description, 60, 0, false)}
 <tr>
  <td align="center"><pre>${f.bit}</pre></td>
  <td align="center">${f.label || "-"}</td>
- <td align="center">${splitString(f.description, 40, 4)}</td>
+ <td align="center">${ensureWidth(f.description, 40)}</td>
 </tr>
 `,
 						);
@@ -103,7 +104,7 @@ ${splitString(val.description, 60, 0, false)}
 (instruction) ${text}
 \`\`\`
 
-${splitString(val.description, 60, 0, false)}
+${ensureWidth(val.description, 60)}
 
 [\`${text}\` reference](https://www.felixcloutier.com/x86/${val.name})
 `,
@@ -116,4 +117,3 @@ ${splitString(val.description, 60, 0, false)}
 		},
 	});
 }
-
