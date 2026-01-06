@@ -6,7 +6,15 @@ function find_by_name(name: string, document: vscode.TextDocument) {
 	if (name.endsWith(":")) {
 		// replacing label name at its definition
 		search_string = name.substring(0, name.length - 1);
-	} else if (!fulltext.includes(`${name}:`)) return null;
+	} else if (
+		!(
+			fulltext.includes(`${name}:`) ||
+			fulltext.match(
+				new RegExp(`(?<=[struc|macro|extrn]\\s*)(?<!\\w)${name}(?!\\w)`),
+			)
+		)
+	)
+		return null;
 	//neg lookahead/behind to only match names, not substrings
 	search_string = `(?<!\\w)${search_string.replaceAll(".", "\\.")}:?(?!\\w)`;
 	const search_regex = new RegExp(search_string, "g");
@@ -18,13 +26,13 @@ export default function renameProvider() {
 	// register regular expressions
 	return vscode.languages.registerRenameProvider("fasm", {
 		prepareRename(document, position, _) {
-			const range = document.getWordRangeAtPosition(position, /\.?[\w\d]+/);
+			const range = document.getWordRangeAtPosition(position, /\.?[\w\d#]+/);
 			if (!range) throw "range undefined";
 			const text = document.getText(range);
 			return { range, placeholder: text };
 		},
 		provideRenameEdits(document, position, newName, _) {
-			const range = document.getWordRangeAtPosition(position, /\.?[\w\d]+:?/);
+			const range = document.getWordRangeAtPosition(position, /\.?[\w\d#]+:?/);
 			if (!range) {
 				vscode.window.showErrorMessage(
 					`couldn't resolve range for token at line ${position.line}`,
@@ -34,13 +42,13 @@ export default function renameProvider() {
 			const name = document.getText(range);
 			const matches = find_by_name(name, document);
 			if (matches === null) {
-				vscode.window.showErrorMessage(`no definition for '${name}' found`);
+				vscode.window.showErrorMessage(`Renaming for '${name}' not supported`);
 				return null;
 			}
 			const edits = new vscode.WorkspaceEdit();
 			for (const match of matches) {
 				const m_pos = document.positionAt(match.index);
-				const m_range = document.getWordRangeAtPosition(m_pos, /\.?[\w\d]+:?/);
+				const m_range = document.getWordRangeAtPosition(m_pos, /\.?[\w\d#]+:?/);
 				if (!m_range) {
 					vscode.window.showErrorMessage(
 						`couldn't resolve range for ${match[0]} at line ${m_pos.line}`,
