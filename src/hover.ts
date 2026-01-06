@@ -79,14 +79,82 @@ const flagsTable = (flags: Flag[]) => `
 
 `;
 
+type LocalDef = {
+  name: string;
+  type: string;
+  pos: vscode.Position;
+}
+
+function find_definition(name: string, document: vscode.TextDocument): LocalDef | null {
+	const fulltext = document.getText();
+  let stripped = name;
+	if (name.endsWith(":")) {
+		// replacing label name at its definition
+		stripped = name.substring(0, name.length - 1);
+	}
+  stripped = stripped.replaceAll(".", "\\.").trim();
+	//neg lookahead/behind to only match names, not substrings
+  
+	const search_string = `(?<type>(?:struc|macro|global|extrn|public))?\\s*(?<!\\w)(?<name>${stripped})(?!\\w)(?<label>:)?`;
+	const search_regex = new RegExp(search_string);
+	const match = fulltext.match(search_regex);
+	if (!match || !match.index || !match.groups) return null;
+  if(match.groups.type !== undefined) {
+    return {
+      name: stripped,
+      type: match.groups.type,
+      pos: document.positionAt(match.index)
+    }
+  }
+  else if(match.groups.label !== undefined) {
+    return {
+      name: stripped,
+      type: "local",
+      pos: document.positionAt(match.index)
+    }
+  }
+	return null;
+}
+
+type DocWithDef = [s: string, d: LocalDef];
+
+function find_doc_comment(name: string, document: vscode.TextDocument): DocWithDef | null {
+	let def: LocalDef | null;
+	if (!(def = find_definition(name, document))) return null;
+	const docs: string[] = [];
+	let m: RegExpMatchArray | null;
+	if (def.pos.line >= 0) {
+		for (let offs = 1; ; ++offs) {
+      const dl = def.pos.line - offs;
+      if(dl < 0) break;
+			const l = document.lineAt(dl);
+			if (!(m = l.text.match(/(?:^\s*)[;]+(?<doc>.*)/))) break;
+			if (!m.groups) throw "unreachable";
+			docs.push(m.groups.doc);
+		}
+    if (!docs.length) {
+      // fallback to comment on same line
+      if (
+        (m = document.lineAt(def.pos.line).text.match(/(?:\s*)[;]+(?<doc>.*)/)) !==
+        null
+      ) {
+        if (!m.groups) throw "unreachable";
+        docs.push(m.groups.doc);
+      }
+    }
+	}
+	return [docs.join(" <br> "), def];
+}
+
 export default function hoverProvider() {
 	// register regular expressions
 	return vscode.languages.registerHoverProvider("fasm", {
 		provideHover(document, position, _) {
 			const result = new vscode.MarkdownString();
 			result.supportHtml = true;
-			const range = document.getWordRangeAtPosition(position);
+			const range = document.getWordRangeAtPosition(position, /\.?[\w\d#]+/);
 			const text = document.getText(range);
+			let doc: DocWithDef | null;
 			if (resultCache.has(text))
 				return {
 					contents: [resultCache.get(text) as vscode.MarkdownString],
@@ -96,6 +164,7 @@ export default function hoverProvider() {
 				result.appendMarkdown(
 					hoverHeader("keyword", text, fasm[text as keyof typeof fasm]),
 				);
+				resultCache.set(text, result);
 			} else if (text in registers) {
 				const val = registers[text as keyof typeof registers];
 				result.appendMarkdown(hoverHeader("register", text, val.description));
@@ -106,6 +175,7 @@ export default function hoverProvider() {
 				);
 
 				if (val.flags.length) result.appendMarkdown(flagsTable(val.flags));
+				resultCache.set(text, result);
 			} else if (text in instructions) {
 				const val = instructions[text as keyof typeof instructions];
 				result.appendMarkdown(
@@ -114,10 +184,12 @@ export default function hoverProvider() {
 				result.appendMarkdown(
 					`[\`${text}\` reference](https://www.felixcloutier.com/x86/${val.name})`,
 				);
+				resultCache.set(text, result);
+			} else if ((doc = find_doc_comment(text, document)) !== null) {
+				result.appendMarkdown(hoverHeader(doc[1].type, text, doc[0]));
 			} else {
 				return null;
 			}
-			resultCache.set(text, result);
 			return { contents: [result], range };
 		},
 	});
