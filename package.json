@@ -5,7 +5,7 @@
   "publisher": "MuhinBetenyaInc",
   "displayName": "FASM extension",
   "description": "FASM language extension for visual studio code",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/kostyabet/VSCode-FASM-ext.git"
@@ -162,7 +162,7 @@
     "schema:fasm": "quicktype ./util/fasm.json -o ./util/fasm.ts",
     "schema:ins": "quicktype ./util/instructions.json -o ./util/instructions.ts",
     "schema": "npm run schema:regs && npm run schema:fasm && npm run schema:ins",
-    "gen:def": "cd util && tsc --downlevelIteration json2ts.ts && node json2ts.js && rm *.js",
+    "gen:def": "tsc --downlevelIteration util/json2ts.ts && node util/json2ts.js ./src/fasm.defs.ts && rm util/*.js",
     "gen": "npm run schema && npm run gen:def"
   },
   "devDependencies": {
