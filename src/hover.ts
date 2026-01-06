@@ -45,8 +45,6 @@ ${ensureWidth(body, 60)}
 
 `;
 
-const mdLink = (text: string, url: string) => `[${text}](${url})`
-
 type Flag = {
 	bit: string;
 	label: string;
@@ -101,12 +99,21 @@ export default function hoverProvider() {
 			} else if (text in registers) {
 				const val = registers[text as keyof typeof registers];
 				result.appendMarkdown(hoverHeader("register", text, val.description));
+				result.appendMarkdown(
+					`
+- **type** &nbsp;&nbsp;&nbsp;${val.type}
+- **width** &nbsp;${val.width}`,
+				);
 
 				if (val.flags.length) result.appendMarkdown(flagsTable(val.flags));
 			} else if (text in instructions) {
 				const val = instructions[text as keyof typeof instructions];
-        result.appendMarkdown(hoverHeader("instruction", text, val.description))
-        result.appendMarkdown(`[\`${text}\` reference](https://www.felixcloutier.com/x86/${val.name})`)
+				result.appendMarkdown(
+					hoverHeader("instruction", text, val.description),
+				);
+				result.appendMarkdown(
+					`[\`${text}\` reference](https://www.felixcloutier.com/x86/${val.name})`,
+				);
 			} else {
 				return null;
 			}
