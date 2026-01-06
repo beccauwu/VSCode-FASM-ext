@@ -124,17 +124,17 @@
 			{
 				"name": "entry",
 				"tool": "fasm",
-				"description": "MZ: The entry directive sets the entry point for MZ executable, it should be followed by the far address (name of segment, colon and the offset inside segment) of desired entry point.\nPE: The entry directive sets the entry point for Portable Executable, the value of entry point should follow. "
+				"description": "MZ: The entry directive sets the entry point for MZ executable, it should be followed by the far address (name of segment, colon and the offset inside segment) of desired entry point.\\nPE: The entry directive sets the entry point for Portable Executable, the value of entry point should follow. "
 			},
 			{
 				"name": "stack",
 				"tool": "fasm",
-				"description": "MZ:The  stack directive sets up the stack for MZ executable. It can be followed by numerical expression specifying the size of stack to be created automatically or by the far address of initial stack frame when you want to set up the stack manually. When no stack is defined, the stack of default size 4096 bytes will be created.\nPE: stack directive sets up the size of stack for Portable Executable, value of stack reserve size should follow, optionally value of stack commit separated with comma can follow. When stack is not defined, it's set by default to size of 4096 bytes."
+				"description": "MZ:The  stack directive sets up the stack for MZ executable. It can be followed by numerical expression specifying the size of stack to be created automatically or by the far address of initial stack frame when you want to set up the stack manually. When no stack is defined, the stack of default size 4096 bytes will be created.\\nPE: stack directive sets up the size of stack for Portable Executable, value of stack reserve size should follow, optionally value of stack commit separated with comma can follow. When stack is not defined, it's set by default to size of 4096 bytes."
 			},
 			{
 				"name": "heap",
 				"tool": "fasm",
-				"description": "MZ: heap directive should be followed by a 16-bit value defining maximum size of additional heap in paragraphs (this is heap in addition to stack and undefined data). Use heap 0 to always allocate only memory program really needs. Default size of heap is 65535.\nPE: The heap directive chooses the size of heap for Portable Executable, value of heap reserve size should follow, optionally value of heap commit separated with comma can follow. When no heap is defined, it is set by default to size of 65536 bytes, when size of heap commit is unspecified, it is by default set to zero."
+				"description": "MZ: heap directive should be followed by a 16-bit value defining maximum size of additional heap in paragraphs (this is heap in addition to stack and undefined data). Use heap 0 to always allocate only memory program really needs. Default size of heap is 65535.\\nPE: The heap directive chooses the size of heap for Portable Executable, value of heap reserve size should follow, optionally value of heap commit separated with comma can follow. When no heap is defined, it is set by default to size of 65536 bytes, when size of heap commit is unspecified, it is by default set to zero."
 			},
 			{
 				"name": "PE",
@@ -149,7 +149,7 @@
 			{
 				"name": "section",
 				"tool": "fasm",
-				"description": "PE: section directive defines a new section, it should be followed by quoted string defining the name of section, then one or more section flags can follow. Available flags are: code, data, readable, writeable, executable, shareable, discardable, notpageable. The origin of section is aligned to page (4096 bytes).\nCOFF: section directive defines a new section, it should be followed by quoted string defining the name of section, then one or more section flags can follow. Section flags available for both COFF variants are code and data, while flags readable, writeable, executable, shareable, discardable, notpageable, linkremove and linkinfo are available only with Microsoft's COFF variant.\nELF:section directive defines a new section, it should be followed by quoted string defining the name of section, then can follow one or both of the executable and writeable flags, optionally also align operator followed by the number specifying the alignment of section (it has to be the power of two), if no alignment is specified, the default value is used, which is 4 or 8, depending on which format variant has been chosen."
+				"description": "PE: section directive defines a new section, it should be followed by quoted string defining the name of section, then one or more section flags can follow. Available flags are: code, data, readable, writeable, executable, shareable, discardable, notpageable. The origin of section is aligned to page (4096 bytes).\\nCOFF: section directive defines a new section, it should be followed by quoted string defining the name of section, then one or more section flags can follow. Section flags available for both COFF variants are code and data, while flags readable, writeable, executable, shareable, discardable, notpageable, linkremove and linkinfo are available only with Microsoft's COFF variant.\\nELF:section directive defines a new section, it should be followed by quoted string defining the name of section, then can follow one or both of the executable and writeable flags, optionally also align operator followed by the number specifying the alignment of section (it has to be the power of two), if no alignment is specified, the default value is used, which is 4 or 8, depending on which format variant has been chosen."
 			},
 			{
 				"name": "code",
@@ -194,7 +194,7 @@
 			{
 				"name": "rva",
 				"tool": "fasm",
-				"description": "PE: The rva operator can be used inside the numerical expressions to obtain the RVA of the item addressed by the value it is applied to, that is the offset relative to the base of PE image.\n    MS COFF: When using the Microsoft's COFF format, the rva operator can be used inside the numerical expressions to obtain the RVA of the item addressed by the value it is applied to.\n    ELF: The rva operator can be used also in the case of this format (however not when target architecture is x86-64), it converts the address into the offset relative to the GOT table, so it may be useful to create position-independent code."
+				"description": "PE: The rva operator can be used inside the numerical expressions to obtain the RVA of the item addressed by the value it is applied to, that is the offset relative to the base of PE image.\\n    MS COFF: When using the Microsoft's COFF format, the rva operator can be used inside the numerical expressions to obtain the RVA of the item addressed by the value it is applied to.\\n    ELF: The rva operator can be used also in the case of this format (however not when target architecture is x86-64), it converts the address into the offset relative to the GOT table, so it may be useful to create position-independent code."
 			},
 			{
 				"name": "COFF",
@@ -204,12 +204,12 @@
 			{
 				"name": "extrn",
 				"tool": "fasm",
-				"description": "COFF: The extrn directive defines the external symbol, it should be followed by the name of symbol and optionally the size operator specifying the size of data labeled by this symbol. The name of symbol can be also preceded by quoted string containing name of the external symbol and the as operator.\nELF: The extrn directive has the same meaning and syntax as when the COFF output format is selected."
+				"description": "COFF: The extrn directive defines the external symbol, it should be followed by the name of symbol and optionally the size operator specifying the size of data labeled by this symbol. The name of symbol can be also preceded by quoted string containing name of the external symbol and the as operator.\\nELF: The extrn directive has the same meaning and syntax as when the COFF output format is selected."
 			},
 			{
 				"name": "public",
 				"tool": "fasm",
-				"description": "COFF: The public directive declares the existing symbol as public, it should be followed by the name of symbol, optionally it can be followed by the as operator and the quoted string containing name under which symbol should be available as public.\nELF: The public directive has the same meaning and syntax as when the COFF output format is selected."
+				"description": "COFF: The public directive declares the existing symbol as public, it should be followed by the name of symbol, optionally it can be followed by the as operator and the quoted string containing name under which symbol should be available as public.\\nELF: The public directive has the same meaning and syntax as when the COFF output format is selected."
 			},
 			{
 				"name": "static",
