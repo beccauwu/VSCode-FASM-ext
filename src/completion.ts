@@ -1,13 +1,13 @@
 import * as vscode from 'vscode';
-import regExp from "./regExpStrings"
+import {fasmInstructions, fasmRegisters, fasmMacros} from "./fasm.defs"
 
 function completitionProviderString() {
     const completionItems = [
-        ...regExp.fasmInstructions.map(instruction => 
+        ...fasmInstructions.map(instruction => 
             new vscode.CompletionItem(instruction, vscode.CompletionItemKind.Keyword)),
-        ...regExp.fasmRegisters.map(register => 
+        ...fasmRegisters.map(register => 
             new vscode.CompletionItem(register, vscode.CompletionItemKind.Variable)),
-        ...regExp.fasmMacros.map(macro => 
+        ...fasmMacros.map(macro => 
             new vscode.CompletionItem(macro, vscode.CompletionItemKind.Function))
     ];
     return completionItems;
