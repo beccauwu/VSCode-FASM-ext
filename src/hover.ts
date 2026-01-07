@@ -80,90 +80,97 @@ const flagsTable = (flags: Flag[]) => `
 `;
 
 type LocalDef = {
-  name: string;
-  type: string;
-  pos: vscode.Position;
-}
+	name: string;
+	type: string;
+	pos: vscode.Position;
+};
 
-function find_definition(name: string, document: vscode.TextDocument): LocalDef | null {
+function find_definition(
+	name: string,
+	document: vscode.TextDocument,
+): LocalDef | null {
 	const fulltext = document.getText();
-  let stripped = name;
+	let stripped = name;
 	if (name.endsWith(":")) {
 		// replacing label name at its definition
 		stripped = name.substring(0, name.length - 1);
 	}
-  stripped = stripped.replaceAll(".", "\\.").trim();
+	stripped = stripped.replaceAll(".", "\\.").trim();
 	//neg lookahead/behind to only match names, not substrings
-  const prefixes = "(?:struc|macro|global|extrn|public)"
-  const suffixes = "(?::|(?:file|db|dw|du|dd|dp|df|dq|dt)\\??|(?:rb|rw|rd|rp|rf|rq|rt))"
+	const prefixes = "(?:struc|macro|global|extrn|public)";
+	const suffixes =
+		"(?::|(?:file|db|dw|du|dd|dp|df|dq|dt)\\??|(?:rb|rw|rd|rp|rf|rq|rt))";
 	const search_string = `(?<prefix>${prefixes})?\\s*(?<!\\w)(?<name>${stripped})(?!\\w)\\s*(?<suffix>${suffixes})?`;
 	const search_regex = new RegExp(search_string);
 	const match = fulltext.match(search_regex);
 	if (!match || !match.index || !match.groups) return null;
-  if(match.groups.prefix !== undefined) {
-    return {
-      name: stripped,
-      type: match.groups.prefix,
-      pos: document.positionAt(match.index)
-    }
-  }
-  else if(match.groups.suffix !== undefined) {
-    return {
-      name: stripped,
-      type: match.groups.suffix === ":" ? "local" : match.groups.suffix,
-      pos: document.positionAt(match.index)
-    }
-  }
+	if (match.groups.prefix !== undefined) {
+		return {
+			name: stripped,
+			type: match.groups.prefix,
+			pos: document.positionAt(match.index),
+		};
+	} else if (match.groups.suffix !== undefined) {
+		return {
+			name: stripped,
+			type: match.groups.suffix === ":" ? "local" : match.groups.suffix,
+			pos: document.positionAt(match.index),
+		};
+	}
 	return null;
 }
 
 type DocWithDef = [s: string, d: LocalDef];
 
-function find_doc_comment(name: string, document: vscode.TextDocument): DocWithDef | null {
+function find_doc_comment(
+	name: string,
+	document: vscode.TextDocument,
+): DocWithDef | null {
 	let def: LocalDef | null;
 	if (!(def = find_definition(name, document))) return null;
 	const docs: string[] = [];
 	let m: RegExpMatchArray | null;
 	if (def.pos.line >= 0) {
 		for (let offs = 1; ; ++offs) {
-      const dl = def.pos.line - offs;
-      if(dl < 0) break;
+			const dl = def.pos.line - offs;
+			if (dl < 0) break;
 			const l = document.lineAt(dl);
 			if (!(m = l.text.match(/(?:^\s*)[;]+(?<doc>.*)/))) break;
 			if (!m.groups) throw "unreachable";
 			docs.push(m.groups.doc);
 		}
-    if (!docs.length) {
-      // fallback to comment on same line
-      if (
-        (m = document.lineAt(def.pos.line).text.match(/(?:\s*)[;]+(?<doc>.*)/)) !==
-        null
-      ) {
-        if (!m.groups) throw "unreachable";
-        docs.push(m.groups.doc);
-      }
-    }
+		if (!docs.length) {
+			// fallback to comment on same line
+			if (
+				(m = document
+					.lineAt(def.pos.line)
+					.text.match(/(?:\s*)[;]+(?<doc>.*)/)) !== null
+			) {
+				if (!m.groups) throw "unreachable";
+				docs.push(m.groups.doc);
+			}
+		}
 	}
 	return [docs.reverse().join(" <br> "), def];
 }
 
 const fasmDataDirectives = {
-  "db": "directive for defining bytes\ncan be used with string literals",
-  "dw": "directive for defining words (2 bytes)",
-  "du": "directive for defining words (2 bytes)\ncan be used with string literals",
-  "dd": "directive for defining doublewords (4 bytes)",
-  "dp": "directive for defining far pointers (6 bytes low:high)",
-  "df": "directive for defining far pointers (6 bytes low:high)",
-  "dq": "directive for defining quadwords (8 bytes)",
-  "dt": "directive for defining 10 byte values",
-  "rb": "directive for reserving bytes",
-  "rw": "directive for reserving words (2 bytes)",
-  "rd": "directive for reserving doublewords (4 bytes)",
-  "rp": "directive for reserving far pointers (6 bytes)",
-  "rf": "directive for reserving far pointers (6 bytes)",
-  "rq": "directive for reserving quadwords (8 bytes)",
-  "rt": "directive for reserving 10 byte values",
-  "file": "directive for embedding a file",
+	db: "directive for defining bytes\ncan be used with string literals",
+	dw: "directive for defining words (2 bytes)",
+	du: "directive for defining words (2 bytes)\ncan be used with string literals",
+	dd: "directive for defining doublewords (4 bytes)",
+	dp: "directive for defining far pointers (6 bytes low:high)",
+	df: "directive for defining far pointers (6 bytes low:high)",
+	dq: "directive for defining quadwords (8 bytes)",
+	dt: "directive for defining 10 byte values",
+	rb: "directive for reserving bytes",
+	rw: "directive for reserving words (2 bytes)",
+	rd: "directive for reserving doublewords (4 bytes)",
+	rp: "directive for reserving far pointers (6 bytes)",
+	rf: "directive for reserving far pointers (6 bytes)",
+	rq: "directive for reserving quadwords (8 bytes)",
+	rt: "directive for reserving 10 byte values",
+	file: "directive for embedding a file",
 };
 
 export default function hoverProvider() {
@@ -205,12 +212,16 @@ export default function hoverProvider() {
 					`[\`${text}\` reference](https://www.felixcloutier.com/x86/${val.name})`,
 				);
 				resultCache.set(text, result);
-			} else if(text in fasmDataDirectives) {
-        result.appendMarkdown(
-					hoverHeader("keyword", text, fasmDataDirectives[text as keyof typeof fasmDataDirectives]),
+			} else if (text in fasmDataDirectives) {
+				result.appendMarkdown(
+					hoverHeader(
+						"keyword",
+						text,
+						fasmDataDirectives[text as keyof typeof fasmDataDirectives],
+					),
 				);
-        resultCache.set(text, result);
-      } else if ((doc = find_doc_comment(text, document)) !== null) {
+				resultCache.set(text, result);
+			} else if ((doc = find_doc_comment(text, document)) !== null) {
 				result.appendMarkdown(hoverHeader(doc[1].type, text, doc[0]));
 			} else {
 				return null;
