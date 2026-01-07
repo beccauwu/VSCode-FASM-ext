@@ -147,6 +147,25 @@ function find_doc_comment(name: string, document: vscode.TextDocument): DocWithD
 	return [docs.reverse().join(" <br> "), def];
 }
 
+const fasmDataDirectives = {
+  "db": "directive for defining bytes\ncan be used with string literals",
+  "dw": "directive for defining words (2 bytes)",
+  "du": "directive for defining words (2 bytes)\ncan be used with string literals",
+  "dd": "directive for defining doublewords (4 bytes)",
+  "dp": "directive for defining far pointers (6 bytes low:high)",
+  "df": "directive for defining far pointers (6 bytes low:high)",
+  "dq": "directive for defining quadwords (8 bytes)",
+  "dt": "directive for defining 10 byte values",
+  "rb": "directive for reserving bytes",
+  "rw": "directive for reserving words (2 bytes)",
+  "rd": "directive for reserving doublewords (4 bytes)",
+  "rp": "directive for reserving far pointers (6 bytes)",
+  "rf": "directive for reserving far pointers (6 bytes)",
+  "rq": "directive for reserving quadwords (8 bytes)",
+  "rt": "directive for reserving 10 bytes",
+  "file": "directive for embedding a file",
+};
+
 export default function hoverProvider() {
 	// register regular expressions
 	return vscode.languages.registerHoverProvider("fasm", {
@@ -186,7 +205,12 @@ export default function hoverProvider() {
 					`[\`${text}\` reference](https://www.felixcloutier.com/x86/${val.name})`,
 				);
 				resultCache.set(text, result);
-			} else if ((doc = find_doc_comment(text, document)) !== null) {
+			} else if(text in fasmDataDirectives) {
+        result.appendMarkdown(
+					hoverHeader("keyword", text, fasmDataDirectives[text as keyof typeof fasmDataDirectives]),
+				);
+        resultCache.set(text, result);
+      } else if ((doc = find_doc_comment(text, document)) !== null) {
 				result.appendMarkdown(hoverHeader(doc[1].type, text, doc[0]));
 			} else {
 				return null;
