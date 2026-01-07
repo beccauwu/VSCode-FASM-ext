@@ -64,13 +64,12 @@
           {
             "name": "string.quoted.double.fasm",
             "begin": "\"",
-            "end": "\"",
-            "patterns": [
-              {
-                "name": "constant.character.escape.fasm",
-                "match": "\\\\."
-              }
-            ]
+            "end": "\""
+          },
+          {
+            "name": "string.quoted.single.fasm",
+            "begin": "'",
+            "end": "'"
           }
         ]
       },
