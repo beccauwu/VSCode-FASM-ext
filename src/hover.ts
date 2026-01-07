@@ -162,7 +162,7 @@ const fasmDataDirectives = {
   "rp": "directive for reserving far pointers (6 bytes)",
   "rf": "directive for reserving far pointers (6 bytes)",
   "rq": "directive for reserving quadwords (8 bytes)",
-  "rt": "directive for reserving 10 bytes",
+  "rt": "directive for reserving 10 byte values",
   "file": "directive for embedding a file",
 };
 
