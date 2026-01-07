@@ -143,7 +143,7 @@ function find_doc_comment(name: string, document: vscode.TextDocument): DocWithD
       }
     }
 	}
-	return [docs.join(" <br> "), def];
+	return [docs.reverse().join(" <br> "), def];
 }
 
 export default function hoverProvider() {
