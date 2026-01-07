@@ -101,23 +101,31 @@ function find_definition(
 	const suffixes =
 		"(?::|(?:file|db|dw|du|dd|dp|df|dq|dt)\\??|(?:rb|rw|rd|rp|rf|rq|rt))";
 	const search_string = `(?<prefix>${prefixes})?\\s*(?<!\\w)(?<name>${stripped})(?!\\w)\\s*(?<suffix>${suffixes})?`;
-	const search_regex = new RegExp(search_string);
-	const match = fulltext.match(search_regex);
-	if (!match || !match.index || !match.groups) return null;
-	if (match.groups.prefix !== undefined) {
-		return {
-			name: stripped,
-			type: match.groups.prefix,
-			pos: document.positionAt(match.index),
-		};
-	} else if (match.groups.suffix !== undefined) {
-		return {
-			name: stripped,
-			type: match.groups.suffix === ":" ? "local" : match.groups.suffix,
-			pos: document.positionAt(match.index),
-		};
+	const search_regex = new RegExp(search_string, "g");
+	let res: LocalDef | null = null;
+	// the regex will match all occurences since prefix/suffix
+	// are optional so we iterate to find one that is a definition
+	for (const match of fulltext.matchAll(search_regex)) {
+		if (!match || !match.index || !match.groups) return null;
+		if (match.groups.prefix !== undefined) {
+			// prefer prefixed declarations for doc comments (public etc)
+			if (!res || (res && res.type === "local"))
+				res = {
+					name: stripped,
+					type: match.groups.prefix,
+					pos: document.positionAt(match.index),
+				};
+		} else if (match.groups.suffix !== undefined) {
+      // if res exists it's of preferred type
+			if (!res)
+				res = {
+					name: stripped,
+					type: match.groups.suffix === ":" ? "local" : match.groups.suffix,
+					pos: document.positionAt(match.index),
+				};
+		}
 	}
-	return null;
+	return res;
 }
 
 type DocWithDef = [s: string, d: LocalDef];
