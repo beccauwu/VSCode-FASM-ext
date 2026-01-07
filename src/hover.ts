@@ -94,22 +94,23 @@ function find_definition(name: string, document: vscode.TextDocument): LocalDef 
 	}
   stripped = stripped.replaceAll(".", "\\.").trim();
 	//neg lookahead/behind to only match names, not substrings
-  
-	const search_string = `(?<type>(?:struc|macro|global|extrn|public))?\\s*(?<!\\w)(?<name>${stripped})(?!\\w)(?<label>:)?`;
+  const prefixes = "(?:struc|macro|global|extrn|public)"
+  const suffixes = "(?::|(?:file|db|dw|du|dd|dp|df|dq|dt)\\??|(?:rb|rw|rd|rp|rf|rq|rt))"
+	const search_string = `(?<prefix>${prefixes})?\\s*(?<!\\w)(?<name>${stripped})(?!\\w)\\s*(?<suffix>${suffixes})?`;
 	const search_regex = new RegExp(search_string);
 	const match = fulltext.match(search_regex);
 	if (!match || !match.index || !match.groups) return null;
-  if(match.groups.type !== undefined) {
+  if(match.groups.prefix !== undefined) {
     return {
       name: stripped,
-      type: match.groups.type,
+      type: match.groups.prefix,
       pos: document.positionAt(match.index)
     }
   }
-  else if(match.groups.label !== undefined) {
+  else if(match.groups.suffix !== undefined) {
     return {
       name: stripped,
-      type: "local",
+      type: match.groups.suffix === ":" ? "local" : match.groups.suffix,
       pos: document.positionAt(match.index)
     }
   }
